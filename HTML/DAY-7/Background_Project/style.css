@@ -1,0 +1,44 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.card {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../image-1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top:10rem;
+}
+
+#card-2 {
+    background-image: url("../image-2.jpg") ;
+    background-attachment: fixed;
+
+}
+
+#card-3 {
+    background-image: url("../image-3.jpg");
+
+}
+
+#card-4 {
+    background-image: url("../image-4.jpg");
+    background-attachment: fixed;
+}
+
+h2 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    
+}

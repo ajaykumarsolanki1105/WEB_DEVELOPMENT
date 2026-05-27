@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Fundamentals & Selectors</title>
+    <!-- external css -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      /* internal css */
+      h1 {
+        color: rgba(255, 255, 255, 0.664);
+        padding: 20px 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inline css -->
+    <h1 style="background-color: darkred">CSS Fundamentals & Selectors</h1>
+
+    <!-- named selectors -->
+    <h2>Named Selector</h2>
+
+    <!-- class selectors & Decendent -->
+    <div class="card">
+      <p>Hello, Developers Thank You For Watching this video...❤️</p>
+    </div>
+    <div class="card">
+      <p>Hello, Developers Thank You For Watching this video...❤️</p>
+    </div>
+    <div class="card">
+      <p>Hello, Developers Thank You For Watching this video...❤️</p>
+    </div>
+    <div class="card">
+      <p>Hello, Developers Thank You For Watching this video...❤️</p>
+    </div>
+
+    <!-- id selectors -->
+    <button id="read_more">Read More</button>
+
+    <hr style="margin-block: 2rem" />
+    <!-- Child Combinator -->
+
+    <div id="parent">
+      <p>1 - Child Combinator</p>
+      <div>
+        <p>2 - Child Combinator</p>
+      </div>
+      <p>3 - Child Combinator</p>
+    </div>
+
+    <!-- Adjacent Sibling Combinator -->
+
+    <hr style="margin-block: 2rem" />
+    <h3>Adjacent Sibling Combinator</h3>
+    <p>Immediately following sibling</p>
+    <p>Other paragraphs....</p>
+
+    <!--  PSEUDO-CLASS SELECTORS -->
+    <hr style="margin-block: 2rem" />
+    <a
+      id="my_portfolio"
+      target="_blank"
+      href="https://ajaysolanki011.vercel.app/"
+      >My Portfolio 😎</a
+    >
+
+    <hr />
+
+    <!-- nth Child -->
+    <div id="container">
+      <div class="sub-container"><h4>THE CODE YATRA</h4></div>
+      <div class="sub-container"><h4>THE CODE YATRA</h4></div>
+      <div class="sub-container"><h4>THE CODE YATRA</h4></div>
+      <div class="sub-container"><h4>THE CODE YATRA</h4></div>
+      <div class="sub-container"><h4>THE CODE YATRA</h4></div>
+      <div class="sub-container"><h4>THE CODE YATRA</h4></div>
+    </div>
+
+    <!-- psuedo elements selectors -->
+    <hr />
+    <p id="para" style="padding: 100px; font-size: 1.2rem">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+      doloribus eius cum laboriosam repudiandae eaque? Facilis, totam, amet quod
+      quam sapiente repellendus explicabo veritatis architecto aut deleniti
+      nostrum aliquid doloribus, repudiandae reiciendis dolorum quos? Harum
+      dolore numquam magnam saepe iste, est, at, provident modi nihil voluptates
+      ipsum earum ipsa cum doloremque suscipit consectetur tenetur odio sapiente
+      fugit! Excepturi iste ut cupiditate, obcaecati quod a itaque quas minima
+      voluptatem velit assumenda, illo, iure ex doloribus laudantium nobis.
+      Consequuntur dicta reprehenderit, laboriosam nihil ipsa aut. Repudiandae
+      atque quidem maxime voluptate numquam similique unde maiores aliquid
+      harum? Dignissimos amet autem dolorum aliquam veritatis.
+    </p>
+
+    <!-- css box model | margin, padding, border, content -->
+    <hr />
+    <div id="dailogue">
+      <h3>Dailogue Box</h3>
+    </div>
+
+    <div id="dailogue">
+      <h3>Dailogue Box</h3>
+    </div>
+
+    <!-- css colors -->
+    <hr />
+    <div id="color_div" class="named-extended"></div>
+
+    <!-- css units -->
+    <hr />
+    <p id="intro_text">
+      Full Stack Developer with experience in cloud-native applications, modern
+      web technologies, and AI-driven solutions. IBM-certified developer skilled
+      in scalable, secure, and containerized applications. Currently working as
+      a Lecturer mentoring students and managing academic responsibilities.
+    </p>
+
+    <!-- viewport unit -->
+
+    <div id="viewport">
+
+    </div>
+
+    <hr>
+    <p id="my_text">
+      Full Stack Developer with experience in cloud-native applications, modern
+      web technologies, and AI-driven solutions. IBM-certified developer skilled
+      in scalable, secure, and containerized applications. Currently working as
+      a Lecturer mentoring students and managing academic responsibilities.
+    </p>
+
+    
+
+
+
+    <div style="margin-bottom: 10rem"></div>
+  </body>
+</html>

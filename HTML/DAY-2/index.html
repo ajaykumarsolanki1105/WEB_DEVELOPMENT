@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms In HTML</title>
+</head>
+<body>
+    <h1>Forms & Tables In HTML</h1>
+    <hr>
+    <form action="" method="get">
+
+        <fieldset>
+
+
+
+        <legend>Personal Info</legend>
+
+
+
+        <label for="uname">Username</label> <br>
+        <input type="text" value="" name="" id="uname" 
+        placeholder="Enter Your Name" required> <br> <br>
+
+        <label for="email">Email</label> <br>
+        <input type="email" value="" name="" id="email"> <br> <br>
+
+
+        <label for="password">Password</label> <br>
+        <input type="password" value="" name="" id="password"> <br> <br>
+
+
+        <label for="num">Number</label> <br>
+        <input type="number" value="" name="" id="num" maxlength="10"> <br> <br>
+
+        <label for="date">Date</label> <br>
+        <input type="date" value="" name="" id="date"> <br> <br>
+
+        <label for="date">Date and time</label> <br>
+        <input type="datetime-local" value="" name="" id="date"> <br> <br>
+
+        <label for="tele">Telephone</label> <br>
+        <input type="tel" value="" name="" id="tele"> <br> <br>
+
+        <label for="date">Time</label> <br>
+        <input type="time" value="" name="" id="date"> <br> <br>
+
+        <label for="date">Color</label> <br>
+        <input type="color" value="" name="" id="date"> <br> <br>
+
+        <h2>hobbies</h2>
+        <label for="Singing">Singing</label>
+        <input type="checkbox" name="" id="Singing"> <br><br>
+
+        <label for="Dancing">Dancing</label>
+        <input type="checkbox" name="" id="Dancing"> <br><br>
+
+         <label for="Cricket">Cricket</label>
+        <input type="checkbox" name="" id="Cricket"> <br><br>
+
+        <h2>Gender</h2>
+        <label for="male">Male</label>
+        <input type="radio" name="Gender" id="male" value="male">
+
+        <label for="Female">Female</label>
+        <input type="radio" name="Gender" id="Female" value="Female">
+
+        <label for="Others">Others</label>
+        <input type="radio" name="Gender" id="Others" value="Others">
+
+        <br><br>
+
+        <label for="file">Select Your Image</label> <br>
+        <input type="file" id="file">
+
+        <br><br>
+
+        <input type="range" value="90">
+
+        <br>
+        <br>
+
+        <label for="message">Enter Your Message</label> <br>
+
+        <textarea name="" id="message" cols="50" rows="8">
+
+        </textarea>
+
+        <br><br>
+
+        <label for="subject">Select Your Subject</label>
+
+        <select name="" id="subject">
+            <option value="">--select your subject--</option>
+            <option value="Java">Java</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Node.js">Node.js</option>
+            <option value="Mongodb">Mongodb</option>
+
+        </select>
+
+
+        <br><br>
+
+        <label for="brwoser">Select Your Browser</label>
+
+        <input list="brwosers" id="brwoser">
+
+        <datalist id="brwosers">
+            <option value="chrome">chrome</option>
+            <option value="brave">brave</option>
+            <option value="microsoft Edge">microsoft Edge</option>
+            <option value="safari">safari</option>
+        </datalist>
+        
+        
+
+
+        <br><br>
+        <button type="submit">Submit</button>
+
+        </fieldset>
+
+
+        <h2>Tables In HTML</h2>
+
+        <!-- <table border="1">
+            <tr>
+                <td>Name</td>
+                <td>Roll No</td>
+                <td>Class</td>
+            </tr>
+
+            <tr>
+                <td>ajay</td>
+                <td>25</td>
+                <td>2A10</td>
+            </tr>
+
+            <tr>
+                <td>kiran</td>
+                <td>25</td>
+                <td>2A8</td>
+            </tr>
+
+            <tr>
+                <td>amit</td>
+                <td>25</td>
+                <td>2A1</td>
+            </tr>
+            
+        </table> -->
+
+
+        <table border="">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th>Company</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Ajay</td>
+                    <td>23</td>
+                    <td>6LPA</td>
+                    <td rowspan="4">Google</td>
+                </tr>
+
+                 <tr>
+                    <td>Suraj</td>
+                    <td>32</td>
+                    <td>10LPA</td>
+                    <!-- <td>Google</td> -->
+                </tr>
+
+                 <tr>
+                    <td>Samir</td>
+                    <td>23</td>
+                    <td>2LPA</td>
+                    <!-- <td>Google</td> -->
+                </tr>
+
+                 <tr>
+                    <td>Vishal</td>
+                    <td>23</td>
+                    <td>5LPA</td>
+                    <!-- <td>Google</td> -->
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr><td colspan="4">Thank You</td></tr>
+            </tfoot>
+
+
+        </table>
+
+
+    </form>
+    
+</body>
+</html>

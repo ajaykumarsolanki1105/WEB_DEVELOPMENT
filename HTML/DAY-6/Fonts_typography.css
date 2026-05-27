@@ -1,0 +1,840 @@
+@import url('https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Storm&display=swap');/* ===========================================
+   CSS FONTS AND TYPOGRAPHY - ADVANCED GUIDE
+   ===========================================
+
+   Typography is crucial for readability, 
+   accessibility, and user experience.
+   CSS provides comprehensive control over 
+   text appearance and layout.
+
+   TYPOGRAPHY PROPERTIES COVERED:
+   1. Font Family - Typeface selection and 
+   fallbacks
+   2. Font Size - Text scaling and responsive 
+   sizing
+   3. Font Weight - Text thickness and boldness
+   4. Font Style - Italic and oblique variations
+   5. Font Variant - Small caps and other variants
+   6. Line Height - Vertical spacing between lines
+   7. Letter Spacing - Horizontal spacing between 
+   characters
+   8. Word Spacing - Horizontal spacing between
+    words
+   9. Text Align - Horizontal text alignment
+   10. Text Decoration - Underlines, overlines, 
+   strikethrough
+   11. Text Transform - Case transformations
+   12. Text Shadow - Text drop shadows and effects
+
+   BEST PRACTICES:
+   - Use web-safe fonts with fallbacks
+   - Implement responsive typography with clamp()
+   - Ensure adequate contrast and readability
+   - Consider accessibility (font size, line height)
+   - Optimize font loading performance
+   =========================================== */
+
+#my_text{
+    /* font-size: 1.5rem; */
+    /* font-family: serif; */
+    font-weight: 700;
+    font-style: normal;
+    /* font-variant: small-caps; */
+    /* line-height: 100px; */
+    /* word-spacing: 60px; */
+    /* letter-spacing: 50px; */
+    /* text-transform: capitalize; */
+    /* text-align: justify; */
+
+    text-shadow: -56px 10px 8px red;
+
+}
+
+/* ===========================================
+   1. FONT FAMILY - TYPEFACE SELECTION
+   ===========================================
+
+   Font-family specifies the typeface for text elements.
+   Always include fallback fonts for reliability.
+
+   SYNTAX:
+   - font-family: "Primary Font", "Fallback Font", generic-family;
+
+   GENERIC FAMILIES:
+   - serif (Times New Roman, Georgia)
+   - sans-serif (Arial, Helvetica, Verdana)
+   - monospace (Courier New, Consolas)
+   - cursive (Comic Sans, Brush Script)
+   - fantasy (Impact, Papyrus)
+
+   BEST PRACTICES:
+   - Use web fonts with fallbacks
+   - Include generic family as last resort
+   - Consider font loading performance
+   - Test across different operating systems
+   =========================================== */
+
+/* Web font with fallbacks */
+/* BEST: Modern approach with performance considerations */
+.modern-typography {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                 Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Serif fonts for body text */
+/* GOOD: Traditional, readable for long-form content */
+.serif-body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Monospace for code and technical content */
+/* BEST: Fixed-width for code readability */
+.code-text {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* System font stack - Performance optimized */
+/* ADVANCED: Uses native OS fonts, fastest loading */
+.system-fonts {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ===========================================
+   2. FONT SIZE - TEXT SCALING
+   ===========================================
+
+   Font-size controls the size of text characters.
+   Use relative units for responsive design.
+
+   UNITS:
+   - px: Fixed size (not recommended for body text)
+   - em: Relative to parent font-size
+   - rem: Relative to root font-size
+   - %: Percentage of parent font-size
+   - vw/vh: Viewport-relative (use sparingly)
+
+   BEST PRACTICES:
+   - Use rem for global sizing
+   - Set root font-size for consistent scaling
+   - Implement fluid typography with clamp()
+   - Ensure minimum readable size (16px)
+   =========================================== */
+
+/* Root font-size setup */
+/* BEST: Consistent scaling foundation */
+html {
+    font-size: 16px;                  /* Base size, adjustable */
+}
+
+/* REM-based sizing system */
+/* BEST: Consistent, accessible scaling */
+.text-xs { font-size: 0.75rem; }      /* 12px */
+.text-sm { font-size: 0.875rem; }     /* 14px */
+.text-base { font-size: 1rem; }       /* 16px */
+.text-lg { font-size: 1.125rem; }     /* 18px */
+.text-xl { font-size: 1.25rem; }      /* 20px */
+.text-2xl { font-size: 1.5rem; }      /* 24px */
+.text-3xl { font-size: 10rem; }    /* 30px */
+
+/* Fluid typography with clamp() */
+/* ADVANCED: Responsive without media queries */
+.fluid-heading {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Scales with viewport */
+}
+
+.fluid-body {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+/* EM-based component sizing */
+/* GOOD: Contextual sizing within components */
+.component {
+    font-size: 1rem;                  /* Base component size */
+}
+
+.component__title {
+    font-size: 1.25em;                /* 1.25x component size */
+}
+
+.component__subtitle {
+    font-size: 0.9em;                 /* 0.9x component size */
+}
+
+/* ===========================================
+   3. FONT WEIGHT - TEXT THICKNESS
+   ===========================================
+
+   Font-weight controls the thickness of text characters.
+   Available weights depend on the font family.
+
+   VALUES:
+   - normal (400), bold (700)
+   - lighter, bolder (relative to parent)
+   - 100-900 (numeric weights)
+
+   BEST PRACTICES:
+   - Use semantic values (normal, bold) when possible
+   - Check font support for numeric weights
+   - Avoid lighter/bolder for consistency
+   - Consider accessibility (contrast with background)
+   =========================================== */
+
+/* Semantic font weights */
+/* BEST: Meaningful, accessible */
+.important-text {
+    font-weight: bold;                /* 700 */
+}
+
+.normal-text {
+    font-weight: normal;              /* 400 */
+}
+
+/* Numeric font weights */
+/* ADVANCED: Precise control, requires font support */
+.thin-text { font-weight: 100; }
+.light-text { font-weight: 300; }
+.regular-text { font-weight: 400; }
+.medium-text { font-weight: 500; }
+.semibold-text { font-weight: 600; }
+.bold-text { font-weight: 700; }
+.extrabold-text { font-weight: 800; }
+.black-text { font-weight: 900; }
+
+/* Relative font weights */
+/* GOOD: Contextual emphasis */
+.parent-normal {
+    font-weight: normal;
+}
+
+.parent-normal .child-lighter {
+    font-weight: lighter;             /* Lighter than parent */
+}
+
+.parent-normal .child-bolder {
+    font-weight: bolder;              /* Bolder than parent */
+}
+
+/* ===========================================
+   4. FONT STYLE - ITALIC VARIATIONS
+   ===========================================
+
+   Font-style controls italic and oblique text variations.
+
+   VALUES:
+   - normal: Regular text
+   - italic: True italic (designed slant)
+   - oblique: Artificial slant (fallback)
+
+   BEST PRACTICES:
+   - Use italic for emphasis, not oblique
+   - Check font support for true italics
+   - Consider accessibility (readability)
+   - Use sparingly for hierarchy
+   =========================================== */
+
+/* True italic text */
+/* BEST: Designed for readability */
+.emphasis-text {
+    font-style: italic;
+}
+
+.quote-text {
+    font-style: italic;
+    color: #666;
+}
+
+/* Oblique text - Artificial slant */
+/* GOOD: Fallback when italic not available */
+.oblique-text {
+    font-style: oblique;              /* Artificial 14° slant */
+}
+
+.oblique-angle {
+    font-style: oblique 30deg;        /* Custom angle */
+}
+
+/* Normal text reset */
+/* ADVANCED: Override inherited italic */
+.reset-italic {
+    font-style: normal;
+}
+
+/* ===========================================
+   5. FONT VARIANT - TEXT VARIANTS
+   ===========================================
+
+   Font-variant controls small caps and other text variations.
+
+   VALUES:
+   - normal: Standard text
+   - small-caps: Small capital letters
+   - all-small-caps: All caps, small size
+   - petite-caps, unicase, etc.
+
+   BEST PRACTICES:
+   - Use small-caps for headings and acronyms
+   - Ensure font supports the variant
+   - Consider accessibility (readability)
+   - Test across different browsers
+   =========================================== */
+
+/* Small caps for headings */
+/* BEST: Elegant, space-saving headings */
+.section-heading {
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+}
+
+.acronym {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+/* All small caps */
+/* ADVANCED: Complete small caps transformation */
+.all-small-caps {
+    font-variant: all-small-caps;
+}
+
+/* Normal variant reset */
+/* GOOD: Override inherited variants */
+.reset-variant {
+    font-variant: normal;
+}
+
+/* ===========================================
+   6. LINE HEIGHT - VERTICAL SPACING
+   ===========================================
+
+   Line-height controls vertical spacing between lines of text.
+   Affects readability and visual density.
+
+   VALUES:
+   - normal (browser default, ~1.2)
+   - number: Multiplier of font-size (recommended)
+   - length: Fixed height (px, em, rem)
+   - percentage: Percentage of font-size
+
+   BEST PRACTICES:
+   - Use unitless numbers for inheritance
+   - Aim for 1.4-1.6 for body text
+   - Consider content type (headings vs body)
+   - Test readability across devices
+   =========================================== */
+
+/* Unitless line height - Recommended */
+/* BEST: Inherits properly, scales with font-size */
+.readable-body {
+    line-height: 1.6;                 /* 160% of font-size */
+}
+
+.tight-heading {
+    line-height: 1.2;                 /* Tighter for headings */
+}
+
+.loose-quote {
+    line-height: 1.8;                 /* More space for quotes */
+}
+
+/* Length-based line height */
+/* GOOD: Fixed spacing, but doesn't scale */
+.fixed-line-height {
+    line-height: 24px;                /* Fixed pixel height */
+}
+
+.relative-line-height {
+    line-height: 1.5em;               /* Relative to font-size */
+}
+
+/* Responsive line height */
+/* ADVANCED: Adjusts based on screen size */
+@media (max-width: 768px) {
+    .responsive-line-height {
+        line-height: 1.4;             /* Tighter on mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .responsive-line-height {
+        line-height: 1.6;             /* More space on desktop */
+    }
+}
+
+/* ===========================================
+   7. LETTER SPACING - CHARACTER SPACING
+   ===========================================
+
+   Letter-spacing controls horizontal spacing between characters.
+   Also known as tracking in typography.
+
+   VALUES:
+   - normal: Browser default
+   - length: px, em, rem (positive or negative)
+
+   BEST PRACTICES:
+   - Use em units for scalability
+   - Small adjustments (0.02-0.1em)
+   - Consider font and content type
+   - Test readability at different sizes
+   =========================================== */
+
+/* Subtle letter spacing */
+/* BEST: Improved readability for headings */
+.heading-spacing {
+    letter-spacing: 0.02em;           /* Slight expansion */
+}
+
+.all-caps-spacing {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;            /* More space for caps */
+}
+
+/* Tight letter spacing */
+/* GOOD: Condensed text for space constraints */
+.condensed-text {
+    letter-spacing: -0.02em;          /* Slight tightening */
+}
+
+/* Monospace letter spacing */
+/* ADVANCED: Consistent spacing for monospace */
+.mono-spacing {
+    font-family: monospace;
+    letter-spacing: 0.05em;           /* Even spacing */
+}
+
+/* ===========================================
+   8. WORD SPACING - WORD SPACING
+   ===========================================
+
+   Word-spacing controls horizontal spacing between words.
+   Less commonly used than letter-spacing.
+
+   VALUES:
+   - normal: Browser default
+   - length: px, em, rem
+
+   BEST PRACTICES:
+   - Use sparingly, subtle adjustments
+   - Consider language and font characteristics
+   - Test justification effects
+   - Combine with letter-spacing for fine control
+   =========================================== */
+
+/* Adjusted word spacing */
+/* GOOD: Fine-tune text flow */
+.justified-text {
+    text-align: justify;
+    word-spacing: 0.1em;              /* Better justification */
+}
+
+.tight-text {
+    word-spacing: -0.05em;            /* Tighter word spacing */
+}
+
+/* ===========================================
+   9. TEXT ALIGN - HORIZONTAL ALIGNMENT
+   ===========================================
+
+   Text-align controls horizontal alignment of text within its container.
+
+   VALUES:
+   - left, right, center, justify
+   - start, end (logical directions)
+
+   BEST PRACTICES:
+   - Use left for LTR languages, start for logical
+   - Avoid justify for small containers
+   - Consider content type and readability
+   - Test with different container widths
+   =========================================== */
+
+/* Standard alignments */
+/* BEST: Appropriate for content type */
+.left-align {
+    text-align: left;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.right-align {
+    text-align: right;
+}
+
+/* Justified text */
+/* GOOD: Newspaper/magazine style, use carefully */
+.justified-content {
+    text-align: justify;
+    text-justify: inter-word;         /* Better word spacing */
+}
+
+/* Logical alignments */
+/* ADVANCED: RTL language support */
+.logical-start {
+    text-align: start;                /* Left in LTR, right in RTL */
+}
+
+.logical-end {
+    text-align: end;                  /* Right in LTR, left in RTL */
+}
+
+/* ===========================================
+   10. TEXT DECORATION - UNDERLINES ETC.
+   ===========================================
+
+   Text-decoration adds visual effects to text (underlines, etc.).
+
+   SYNTAX:
+   - text-decoration: line style color thickness
+
+   LINES: underline, overline, line-through
+   STYLES: solid, double, dotted, dashed, wavy
+   COLORS: Any valid color
+   THICKNESS: Length values
+
+   BEST PRACTICES:
+   - Use underline for links, avoid elsewhere
+   - Consider accessibility (color contrast)
+   - Use text-decoration-skip for better appearance
+   - Prefer semantic markup over decoration
+   =========================================== */
+
+/* Link underlines */
+/* BEST: Standard link styling */
+.link-standard {
+    text-decoration: underline;
+    text-decoration-color: #007acc;
+    text-decoration-thickness: 1px;
+}
+
+/* Fancy underlines */
+/* ADVANCED: Custom styled underlines */
+.link-fancy {
+    text-decoration: underline;
+    text-decoration-color: #007acc;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 2px;
+}
+
+/* Strikethrough text */
+/* GOOD: Indicating deleted content */
+.deleted-text {
+    text-decoration: line-through;
+    text-decoration-color: #dc3545;
+}
+
+/* Multiple decorations */
+/* ADVANCED: Combined effects */
+.multiple-decoration {
+    text-decoration: underline overline;
+    text-decoration-style: double;
+}
+
+/* Skip decoration on descenders */
+/* BEST: Better readability */
+.skip-descenders {
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;   /* Skip descenders */
+}
+
+/* ===========================================
+   11. TEXT TRANSFORM - CASE CHANGES
+   ===========================================
+
+   Text-transform changes the case of text content.
+
+   VALUES:
+   - none: No transformation
+   - uppercase: ALL CAPS
+   - lowercase: all lowercase
+   - capitalize: First Letter Of Each Word
+
+   BEST PRACTICES:
+   - Use for stylistic purposes, not content changes
+   - Consider accessibility (screen readers)
+   - Combine with letter-spacing for caps
+   - Test with different languages
+   =========================================== */
+
+/* Case transformations */
+/* BEST: Stylistic text treatment */
+.uppercase-heading {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+.capitalize-title {
+    text-transform: capitalize;
+}
+
+.lowercase-subtitle {
+    text-transform: lowercase;
+}
+
+/* Reset transformation */
+/* GOOD: Override inherited transforms */
+.reset-transform {
+    text-transform: none;
+}
+
+/* ===========================================
+   12. TEXT SHADOW - TEXT EFFECTS
+   ===========================================
+
+   Text-shadow adds drop shadows and glows to text.
+
+   SYNTAX:
+   - text-shadow: offset-x offset-y blur-radius color;
+
+   BEST PRACTICES:
+   - Use subtle shadows for depth
+   - Consider performance impact
+   - Ensure readability with shadows
+   - Multiple shadows for complex effects
+   =========================================== */
+
+/* Subtle drop shadow */
+/* BEST: Adds depth without affecting readability */
+.shadow-text {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Strong shadow for contrast */
+/* GOOD: High contrast backgrounds */
+.contrast-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Glow effect */
+/* ADVANCED: Neon/glow text effects */
+.glow-text {
+    text-shadow: 0 0 10px #007acc, 0 0 20px #007acc, 0 0 30px #007acc;
+}
+
+/* Multiple shadows */
+/* ADVANCED: Complex text effects */
+.multiple-shadows {
+    text-shadow:
+        1px 1px 0px #ccc,
+        2px 2px 0px #c9c9c9,
+        3px 3px 0px #bbb,
+        4px 4px 0px #b9b9b9,
+        5px 5px 0px #aaa;
+}
+
+/* ===========================================
+   ADVANCED TYPOGRAPHY TECHNIQUES
+   ===========================================
+
+   Modern CSS features for enhanced typography.
+
+   BEST PRACTICES:
+   - Use CSS custom properties for design tokens
+   - Implement responsive typography systems
+   - Consider font loading optimization
+   - Test across different devices and browsers
+   =========================================== */
+
+/* Typography design system */
+/* BEST: Consistent, maintainable typography */
+:root {
+    --font-family-primary: 'Inter', sans-serif;
+    --font-family-secondary: 'Georgia', serif;
+    --font-family-mono: 'Fira Code', monospace;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+}
+
+.typography-system {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+}
+
+/* Fluid typography scale */
+/* ADVANCED: Responsive scaling */
+.fluid-scale {
+    --fluid-min: 1rem;
+    --fluid-max: 1.25rem;
+    --fluid-scale: 2.5vw;
+
+    font-size: clamp(var(--fluid-min), var(--fluid-scale), var(--fluid-max));
+}
+
+/* ===========================================
+   FONT LOADING OPTIMIZATION
+   ===========================================
+
+   Techniques for fast, reliable font loading.
+
+   BEST PRACTICES:
+   - Use font-display for loading behavior
+   - Preload critical fonts
+   - Use system fonts as fallbacks
+   - Minimize font file sizes
+   =========================================== */
+
+/* Font display strategies */
+/* BEST: Control loading behavior */
+@font-face {
+    font-family: 'Inter';
+    src: url('inter.woff2') format('woff2');
+    font-display: swap;               /* Fallback text visible */
+}
+
+.fast-loading {
+    font-display: optional;           /* Skip if slow */
+}
+
+/* Preload critical fonts */
+/* ADVANCED: Priority loading */
+/* <link rel="preload" href="critical-font.woff2" as="font" type="font/woff2" crossorigin> */
+
+/* ===========================================
+   ACCESSIBILITY CONSIDERATIONS
+   ===========================================
+
+   Typography choices that enhance accessibility.
+
+   BEST PRACTICES:
+   - Ensure minimum font size (16px)
+   - Maintain adequate line height (1.5+)
+   - Provide sufficient contrast
+   - Support user font preferences
+   - Test with screen readers
+   =========================================== */
+
+/* Accessible base typography */
+/* BEST: WCAG compliant defaults */
+.accessible-base {
+    font-size: 1rem;                  /* Minimum 16px */
+    line-height: 1.5;                 /* Adequate spacing */
+    font-family: sans-serif;          /* Clear, readable */
+}
+
+/* Respect user preferences */
+/* ADVANCED: User-centric design */
+@media (prefers-reduced-motion: reduce) {
+    .animated-text {
+        text-shadow: none;            /* Remove shadows */
+    }
+}
+
+/* High contrast support */
+/* GOOD: Enhanced visibility */
+@media (prefers-contrast: high) {
+    .high-contrast-text {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+/* ===========================================
+   PERFORMANCE OPTIMIZATION
+   ===========================================
+
+   Typography choices that impact performance.
+
+   BEST PRACTICES:
+   - Use system fonts when possible
+   - Optimize web font loading
+   - Minimize text-shadow usage
+   - Consider font subsetting
+   =========================================== */
+
+/* Performance-optimized fonts */
+/* BEST: Fast loading, reliable */
+.performance-fonts {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Font subsetting consideration */
+/* ADVANCED: Reduce file size */
+@font-face {
+    font-family: 'Optimized Font';
+    src: url('font-latin.woff2') format('woff2');
+    unicode-range: U+000-5FF;         /* Latin characters only */
+}
+
+/* ===========================================
+   CROSS-BROWSER COMPATIBILITY
+   ===========================================
+
+   Typography support across browsers.
+
+   BEST PRACTICES:
+   - Provide fallbacks for advanced features
+   - Test font rendering differences
+   - Use vendor prefixes when necessary
+   - Progressive enhancement approach
+   =========================================== */
+
+/* Fallback typography */
+/* BEST: Graceful degradation */
+.fallback-typography {
+    font-family: Arial, sans-serif;   /* Basic fallback */
+    font-variant: normal;             /* Reset variants */
+    text-decoration: none;            /* Reset decorations */
+}
+
+/* Vendor prefixes for older browsers */
+/* GOOD: Legacy support */
+.vendor-support {
+    -webkit-font-smoothing: antialiased; /* Chrome/Safari */
+    -moz-osx-font-smoothing: grayscale;  /* Firefox */
+}
+
+/* ===========================================
+   DEBUGGING AND TESTING
+   ===========================================
+
+   Tools and techniques for typography debugging.
+
+   BEST PRACTICES:
+   - Use browser dev tools typography inspector
+   - Test font loading waterfall
+   - Verify contrast ratios
+   - Check line-height calculations
+   =========================================== */
+
+/* Debug typography - Development only */
+/* GOOD: Visual debugging */
+.debug-typography::before {
+    content: "Font: " attr(data-font-info);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 2px 5px;
+    font-size: 10px;
+}
+
+/* ===========================================
+   CONCLUSION
+   ===========================================
+
+   Typography is the foundation of good design and user experience.
+   Master these properties for readable, accessible, and beautiful text.
+
+   KEY TAKEAWAYS:
+   - Use rem for font sizes, unitless for line-height
+   - Implement responsive typography with clamp()
+   - Ensure accessibility (contrast, size, spacing)
+   - Optimize font loading performance
+   - Test across devices and languages
+   =========================================== */

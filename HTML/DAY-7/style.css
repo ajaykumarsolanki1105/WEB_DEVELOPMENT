@@ -1,0 +1,257 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    padding: 1rem;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+}
+
+/* Inline
+
+Block
+
+hidden 
+
+visible
+
+inline-block  */
+
+h2 {
+    background-color: darkgreen;
+    padding: 1rem;
+    display: inline;
+    margin-top: 50px;
+}
+
+/* p {
+    background-color: darkviolet;
+    padding: 1rem;
+    margin-bottom: 20px;
+    
+} */
+
+span {
+    background-color: darkred;
+    padding: 1rem;
+    display: block;
+    /* display: flex; */
+    /* display: none; */
+    /* display: grid; */
+}
+
+
+
+
+
+/* 
+| Position | Behavior                     |
+| -------- | ---------------------------- |
+| static   | Default                      |
+| relative | Moves from original position |
+| absolute | Positioned inside parent     |
+| fixed    | Fixed to screen              |
+| sticky   | Scroll + fixed combo         |
+
+
+*/
+
+.card {
+    width: 100px;
+    height: 100px;
+    background: darkmagenta;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+#div2 {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+   
+}
+#div3 {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+   
+}
+
+#div4 {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+   
+}
+
+#div5 {
+    position: absolute;
+    top: 42%;
+    left: 42%;
+   
+}
+
+button {
+    padding: 1rem 1.5rem;
+    background-color: darkred;
+    color: aliceblue;
+    position: fixed;
+    top: 90%;
+    right: 2%;
+}
+
+#sticky {
+    padding: 1rem 1.5rem;
+    background-color: darkred;
+    color: aliceblue;
+    position: sticky;
+    top: 50%;
+}
+
+
+
+
+
+/* ===========================================
+   CSS BACKGROUND PROPERTIES - ADVANCED GUIDE
+   ===========================================
+
+   CSS background properties control the 
+   background appearance of elements.
+   Understanding these properties is crucial
+    for creating visually appealing
+   and performant web designs.
+
+   BACKGROUND PROPERTIES COVERED:
+   1. background-color - Sets solid background color
+   2. background-image - Sets background images or
+    gradients
+   3. background-repeat - Controls image repetition
+   4. background-attachment - Controls image scrolling behavior
+   5. background-position - Positions background images
+   6. background (shorthand) - Combines all properties 
+   
+   */
+
+.container {
+    width: 600px;
+    height: 600px;
+    margin: 2rem auto;
+    background-color: darkcyan;
+    /* background-image: url("./image-1.jpg"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+
+    /* background: linear-gradient(direction, color1, color2....colorn); */
+
+    /* background: linear-gradient(to left, darkblue, darkred); */
+
+    /* background: radial-gradient(darkblue, darkred); */
+
+
+}
+
+/* flexbox */
+
+/* html {
+    overflow-x: hidden;
+} */
+
+/* parent container */
+.flex-container {
+    background-color: darkblue;
+    width: 100vw;
+    height: 500px;
+    padding: 20px 10px;
+    /* padding: 5rem 1rem; */
+    /* display: flex; */
+    position: relative;
+    
+    /* flex-direction: row-reverse; */
+    /* gap: 50px; */
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: flex-end; */
+    /* justify-content: flex-start; */
+    /* justify-content: space-evenly; */
+    /* justify-content: space-around; */
+
+    /* align-items: end; */
+    /* align-items: start; */
+    /* align-items: center; */
+    /* align-items: stretch; */
+
+    /* flex-wrap: wrap-reverse; */
+}
+
+/* childs */
+.items {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* flex basis */
+
+/* #item-1 {
+    flex-basis: 23%;
+}
+
+#item-2 {
+    flex-basis: 50%;
+}
+
+
+#item-3 {
+    flex-basis: 23%;
+} */
+
+
+/* #item-3{
+    flex-grow: 2;
+    background-color: darkred;
+}
+
+#item-4 {
+    flex-shrink: 3;
+} */
+
+
+#item-1 {
+    position: absolute;
+    background-color: darkred;
+    z-index: 400;
+}
+
+#item-2 {
+    background-color: darkgray;
+    z-index: 600;
+    position: absolute;
+
+}
+
+#item-3 {
+    position: absolute;
+    background-color: darkcyan;
+    z-index: 800;
+}
+
+#overflow {
+    width: 600px;
+    border: 5px solid black;
+
+    overflow-x: hidden;
+    /* overflow: auto; */
+    height: 200px;
+    margin: 2rem auto;
+}

@@ -1,0 +1,687 @@
+/* ===========================================
+   CSS SELECTORS - ADVANCED GUIDE
+   ===========================================
+
+   CSS selectors are patterns used to select 
+   and style HTML elements.
+   This file demonstrates advanced selector 
+   techniques across all 
+   categories:
+
+   1. Simple Selectors
+   2. Combinator Selectors
+   3. Pseudo-class Selectors
+   4. Pseudo-elements Selectors
+   5. Attribute Selectors
+
+   BEST PRACTICES:
+   - Use the most specific selector needed for the job
+   - Prefer classes over IDs for reusability
+   - Avoid overly complex selectors
+    (keep specificity low)
+   - Use semantic HTML to reduce selector 
+   complexity
+   - Consider performance: 
+   ID > Class > Tag > Universal
+   - Maintain selector readability 
+   and maintainability
+   =========================================== */
+
+/* ===========================================
+   1. SIMPLE SELECTORS
+   ===========================================
+
+   Simple selectors target elements by name, id, or class.
+   These are the most common and performant selectors.
+
+   BEST PRACTICES:
+   - Use classes for styling (reusable, low specificity)
+   - Reserve IDs for JavaScript hooks and unique elements
+   - Avoid universal selector (*) in production (slow)
+   - Combine simple selectors for better performance
+   =========================================== */
+
+/* Type/Element Selector - Selects all elements of a type */
+/* BEST: Use for base styling, LOW specificity */
+
+h2 {
+    margin-block: 20px;
+    color: darkgray;
+    background-color: black;
+    padding: 20px;
+}
+
+
+/* Class Selector - Most versatile and recommended */
+/* BEST: Primary method for styling, reusable, moderate specificity */
+.card {
+    margin-left: 20px;
+    padding: 10px;
+    display: inline-block;
+    width: 350px;
+    height: 100px;
+    background-color: darkblue;
+}
+
+
+/* ID Selector - Highest specificity, use sparingly */
+/* BEST: JavaScript hooks, unique page elements only */
+/* AVOID: For general styling (not reusable, high 
+specificity) */
+
+#main_heading {
+    color: red;
+}
+
+#read_more {
+    margin: 20px 30px;
+    padding: 20px 40px;
+    background-color: deeppink;
+    font-size: 1.2rem;
+}
+
+
+/* Universal Selector - Selects all elements */
+/* AVOID: Performance impact, use only for resets */
+/* GOOD: Limited use in CSS resets */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* * {
+    color: brown;
+    background-color: aqua;
+} */
+
+/* ===========================================
+   2. COMBINATOR SELECTORS
+   ===========================================
+
+   Combinator selectors define relationships 
+   between elements.
+   They allow targeting elements based on their position 
+   in the DOM.
+
+   BEST PRACTICES:
+   - Use descendant combinators for component scoping
+   - Be cautious with child/sibling combinators (fragile)
+   - Avoid overly deep nesting (performance, maintainability)
+   - Consider using classes instead of complex combinators
+   =========================================== */
+
+/* Descendant Combinator (space) - Selects all descendants */
+/* BEST: Component styling, flexible and common */
+
+.card p {
+    color: darkorange;
+}
+
+
+/* Child Combinator (>) - Direct children only */
+/* GOOD: Precise targeting, but fragile with HTML changes */
+
+#parent > p {
+    color: darkcyan;
+    font-size: 2rem;
+}
+
+/* Adjacent Sibling Combinator (+) - Immediately following sibling */
+/* GOOD: Form styling, but limited use cases */
+
+h3 + p {
+    color: blue;
+    background-color: black;
+    padding: 10px;
+}
+
+
+/* General Sibling Combinator (~) - All following siblings */
+/* GOOD: Related element styling */
+
+/* h1 ~ p{
+    color: rgb(212, 3, 73);
+    background-color: rgb(212, 212, 15);
+} */
+
+
+/* ===========================================
+   3. PSEUDO-CLASS SELECTORS
+   ===========================================
+
+   Pseudo-classes select elements based on 
+   their state or position.
+   They enable interactive and dynamic styling.
+
+   BEST PRACTICES:
+   - Use semantic pseudo-classes for 
+   better accessibility
+   - Combine with other selectors for 
+   specificity control
+   - Test interactive states across all
+    input methods
+   - Avoid relying solely on hover for 
+   important interactions
+   =========================================== */
+
+/* Link States - Essential for navigation */
+/* BEST: Always define in this order: link,
+ visited, hover, active */
+/* #My_Link:link {
+    color: green;
+    background-color: burlywood;
+} */
+
+/* #My_Link:visited {
+    color: white;
+    background-color: orangered;
+} */
+
+/* #My_Link:hover {
+    color: red;
+    background-color: blue;
+} */
+
+/* #My_Link:active {
+    color: rgb(206, 187, 11);
+    background-color: white;
+   
+} */
+/* Form States - Critical for user experience */
+
+
+/* #my_portfolio:hover {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 30px;
+} */
+
+#my_portfolio:visited {
+    color: orange;
+    font-size: 2rem;
+    background-color: #007acc;
+}
+
+
+
+
+
+
+#input-field:focus {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid green ;
+}
+
+#input-field:invalid {
+border-bottom: 2px solid red ;
+
+}
+
+#input-field:valid {
+    border-bottom: 2px solid blue ;
+}
+
+/* Structural Pseudo-classes - 
+Content-aware styling */
+/* BEST: Use for alternating patterns,
+ first/last styling */
+
+#container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#container div {
+    width: 150px;
+    height: 150px;
+    color: black;
+    border: 2px solid black;
+}
+
+#container div:nth-child(odd){
+    background-color: darkblue;
+    /* color: white; */
+
+}
+
+
+#container div:nth-child(even) {
+    background-color: darkviolet;
+    /* color: white; */
+}
+
+#container div:first-child {
+    background-color: darkgreen;
+}
+
+#container div:last-child {
+    background-color: orangered;
+}
+
+
+/* Advanced nth-child patterns */
+
+
+
+
+#container div:nth-child(5n+1) {
+
+    background-color: darkcyan;
+
+
+}
+
+.container div:nth-child(n+5):nth-child(-n+8) {
+    background-color: black;
+}
+
+
+/* Interactive States - Essential for accessibility */
+.button:hover {
+   
+}
+
+.button:focus {
+   
+}
+
+.button:active {
+   
+}
+
+/* ===========================================
+   4. PSEUDO-ELEMENTS SELECTORS
+   ===========================================
+
+   Pseudo-elements create virtual elements
+    for styling parts of content.
+   They allow styling content that isn't in 
+   the DOM.
+
+   BEST PRACTICES:
+   - Use single colon for CSS2 compatibility 
+   (:: for CSS3)
+   - Combine with content property for 
+   generated content
+   - Ensure screen readers can access 
+   important pseudo-content
+   - Use for decorative purposes primarily
+   =========================================== */
+
+/* ::before and ::after - Generated content */
+/* BEST: Icons, decorative elements, counters */
+
+h4::before {
+    content: "Before Text ❤️";
+    background-color: yellow;
+
+}
+
+h4::after {
+    content: "After Text 👍";
+    background-color: rebeccapurple;
+}
+
+/* ::first-line and ::first-letter - Typography styling */
+/* GOOD: Drop caps, special first line treatment */
+
+
+#para::first-line {
+
+/* background-color: darkred; */
+/* color: white; */
+
+}
+
+
+#para::first-letter {
+
+    font-size: 5rem;
+    color: black;
+
+}
+
+
+
+
+
+/* ::selection - Custom text selection styling */
+/* BEST: Brand-consistent selection colors */
+::selection {
+    
+}
+
+#para::selection {
+   background-color: green;
+    font-size: 2rem;
+}
+
+/* ::placeholder - Form placeholder styling */
+/* BEST: Accessible placeholder styling */
+#input-field::placeholder {
+    background-color: darkred;
+    color: white;
+}
+
+/* ===========================================
+   5. ATTRIBUTE SELECTORS
+   ===========================================
+
+   Attribute selectors target elements based on their 
+   attributes and values.
+   They enable styling based on HTML attributes.
+
+   BEST PRACTICES:
+   - Use for form validation styling
+   - Combine with other selectors for precision
+   - Consider performance with complex attribute selectors
+   - Use semantic attributes for better accessibility
+   =========================================== */
+
+/* Presence selectors - Attribute exists */
+/* GOOD: Form styling, icon fonts */
+[data-toolpit] {
+    font-size: 5rem;
+    color: brown;
+    background-color: bisque;
+
+}
+
+
+[aria-expanded="true"] {
+    
+}
+
+/* Value selectors - Exact attribute value */
+/* BEST: Specific state styling */
+input[type="email"] {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid blueviolet;
+    
+}
+
+button[type="submit"] {
+    padding: 5px 30px;
+    background: transparent;
+    border: 2px solid green;
+}
+
+/* Partial value selectors - Contains, 
+starts with, ends with */
+/* ADVANCED: Flexible attribute matching */
+[href^="https://"]::after {
+    content: "🧑‍💻";
+    margin-left: 5px;
+  
+}
+
+
+[class*="btn-"] {
+    display: inline-block;
+    padding: 5px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: burlywood;
+    color: brown;
+}
+
+[href$=".pdf"]::before {
+    content: "📄";
+    margin-right: 5px;
+    background-color: black;
+}
+
+/* Case-insensitive matching */
+/* GOOD: User-generated content */
+[data-category="news" i] {
+    background-color: #e3f2fd;
+}
+
+/* ===========================================
+   ADVANCED SELECTOR TECHNIQUES
+   ===========================================
+
+   Combining selectors for powerful, maintainable CSS.
+
+   BEST PRACTICES:
+   - Keep specificity low and consistent
+   - Use BEM or similar methodology for naming
+   - Avoid !important (creates specificity wars)
+   - Document complex selectors
+   =========================================== */
+
+/* Complex selectors with multiple 
+conditions */
+/* ADVANCED: Specific targeting 
+without high specificity */
+.card[data-theme="dark"][data-size="large"] h3 {
+    background-color: darkblue;
+    color: white;
+}
+
+/* BEM Methodology Example */
+/* BEST: Predictable, 
+maintainable naming convention */
+.block__element--modifier {
+    /* Component styling */
+}
+
+.component {
+    padding: 5px 18px;
+    border: none;
+}
+
+.component--danger{
+    background-color: red;
+}
+
+.component--primary{
+    background-color: blue;
+}
+
+
+
+.component__component--primary{
+    background-color: blue;
+}
+
+.card__title--large {
+    /* font-size: 1.5rem;
+    font-weight: bold; */
+}
+
+/* Functional CSS approach */
+/* GOOD: Utility classes for rapid development */
+/* .text-center { text-align: center; }
+.bg-primary { background-color: #007acc; }
+.p-2 { padding: 0.5rem; }
+.m-1 { margin: 0.25rem; } */
+
+/* ===========================================
+   PERFORMANCE CONSIDERATIONS
+   ===========================================
+
+   Selector performance impacts rendering speed.
+
+   BEST PRACTICES:
+   - Right-to-left parsing: Start with rightmost selector
+   - Avoid universal selectors in complex rules
+   - Prefer classes and IDs over complex selectors
+   - Minimize DOM depth for faster matching
+   - Use CSS profiling tools to identify slow selectors
+   =========================================== */
+
+/* Efficient selectors (fast) */
+/* .class-selector { }           Best */
+/* #id-selector { }              Good */
+/* tag-selector { }              Fair */
+/*  { }                         Poor */
+
+/* Inefficient selectors (slow) */
+/* div > * + * { }               Complex combinators */
+/* [attr*="value"] { }           Complex attributes */
+/* body div ul li a { }          Deep nesting */
+
+/* ===========================================
+   ACCESSIBILITY CONSIDERATIONS
+   ===========================================
+
+   Selectors should enhance, not hinder accessibility.
+
+   BEST PRACTICES:
+   - Use semantic selectors that match accessible HTML
+   - Ensure interactive states are clearly visible
+   - Don't rely on color alone for state indication
+   - Test with keyboard navigation and screen readers
+   - Maintain focus indicators for keyboard users
+   =========================================== */
+
+/* Accessible focus states */
+/* button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid #007acc;
+    outline-offset: 2px;
+} */
+
+/* Screen reader only content */
+.sr-only {
+    /* position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0; */
+}
+
+/* ===========================================
+   MAINTAINABILITY AND SCALING
+   ===========================================
+
+   Write selectors that scale with your project.
+
+   BEST PRACTICES:
+   - Use consistent naming conventions
+   - Document complex selector logic
+   - Avoid magic numbers in selectors
+   - Plan for component reusability
+   - Regular CSS audits and refactoring
+   =========================================== */
+
+/* Well-documented complex selector */
+/* Targets: Primary navigation items that are active or have dropdowns */
+.nav__item.is-active,
+.nav__item:has(.dropdown) {
+    background-color: #007acc;
+    color: white;
+}
+
+/* Scalable component structure */
+.component {
+    /* Base component styles */
+}
+
+
+
+/* ===========================================
+   MODERN CSS FEATURES
+   ===========================================
+
+   Leverage modern CSS for better selectors.
+
+   BEST PRACTICES:
+   - Use :is() and :where() for complex selectors
+   - :has() for parent selection (limited support)
+   - Container queries for component-based responsive design
+   - CSS custom properties for dynamic styling
+   =========================================== */
+
+/* :is() - Matches any of the selectors */
+/* BEST: Reduces repetition, handles specificity */
+:is(h1, h2, h3, h4, p).heading {
+   background-color: violet;
+   color: white;
+}
+
+/* Equivalent to: h1.heading, h2.heading, h3.heading, h4.heading */
+
+/* :where() - Similar to :is() but zero specificity */
+/* ADVANCED: Specificity control */
+:where(.theme-dark) .text {
+    background-color: black;
+    color: gray;
+    font-size: 2rem;
+    
+}
+
+/* :has() - Parent selector (limited browser support) */
+/* ADVANCED: Conditional parent styling */
+.card:has(.featured) {
+    
+}
+
+/* Container queries for component responsive design */
+/* BEST: Component-based responsive design */
+@container (min-width: 400px) {
+    /* .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    } */
+}
+
+/* ===========================================
+   DEBUGGING AND TESTING
+   ===========================================
+
+   Tools and techniques for selector debugging.
+
+   BEST PRACTICES:
+   - Use browser dev tools selector inspection
+   - Test selectors across different HTML structures
+   - Validate specificity with CSS calculators
+   - Use CSS linting tools for best practices
+   - Document selector intent and limitations
+   =========================================== */
+
+/* Debug selectors - Add to development CSS */
+/* Highlight elements matching complex selectors */
+[data-debug="complex-selector"] {
+    /* outline: 2px solid red; */
+    /* position: relative; */
+}
+
+[data-debug="complex-selector"]::before {
+    /* content: "DEBUG";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background: red;
+    color: white;
+    padding: 2px 5px;
+    font-size: 10px; */
+}
+
+/* ===========================================
+   CONCLUSION
+   ===========================================
+
+   CSS selectors are the foundation of effective styling.
+   Master these techniques for maintainable, performant CSS.
+
+   KEY TAKEAWAYS:
+   - Choose selectors based on specificity needs
+   - Prioritize performance and accessibility
+   - Use modern features when supported
+   - Document and maintain selector logic
+   - Test across devices and interaction methods
+   =========================================== */
