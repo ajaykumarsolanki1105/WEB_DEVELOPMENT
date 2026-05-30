@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    margin: 2rem auto;
+    border: 2px solid black;
+    border-radius: 50%;
+    animation-name: oribit;
+    animation-duration:2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+/* 
+img {
+    animation-name: oribit;
+    animation-duration:2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} */
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: darkred;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    padding: 2rem 0px;
+    border-radius: 50%;
+
+    
+    /* animation-name: oribit;
+    animation-duration:2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+
+    /* transition-duration: 2s; */
+    /* transition-delay: 2s; */
+ 
+
+    /* transition-duration: 2s; */
+    /* transition-timing-function: ease-in; */
+    /* transition-property:  background-color; */
+    /* transition-timing-function: ease-in; */
+    /* transition-timing-function: ease-in-out; */
+    /* transition-timing-function:cubic-bezier(0.19, 1, 0.22, 1); */
+    /* transition-timing-function: cubic-bezier(0.87, -0.08, 0.12, 0.88); */
+
+    /* transform: translate(400px); */
+    /* transform: translate(400px, 400px); */
+    /* transform: translateX(400px); */
+    /* transform: translateY(400px); */
+    /* transform: translateZ(200px); */ 
+
+    /* transform: scale(2); */
+    /* transform: scaleX(2); */
+    /* transform: scaleY(2); */
+
+    /* transform: rotate(90deg); */
+    /* transform: rotateY(150deg); */
+    /* transform: rotateX(150deg); */
+    /* transform: rotate(1 turn); */
+
+
+    /* transform: skew(150deg); */
+    /* transform: skewX(60deg); */
+    /* transform: skewY(80deg); */
+
+    /* transform-origin:top left; */
+
+    
+    /* animation-timing-function: ease-in-out; */
+    /* animation-delay: 4s; */
+    /* animation-direction: normal; */
+    /* animation-fill-mode:backwards; */
+    /* animation-play-state: running; */
+
+}
+/* 
+.box:hover {
+    background-color: darkcyan;
+    transform: scale(2);
+    transform-origin: top left;
+} */
+
+/* animation */
+
+@keyframes oribit {
+    from {
+      transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0%, 100% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(400px, 0px);
+    }
+
+    50% {
+        transform: translate(400px, 400px);
+    }
+
+    75% {
+        transform: translate(0px, 400px);
+    }
+
+}
