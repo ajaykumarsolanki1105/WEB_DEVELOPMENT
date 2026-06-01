@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: white;
+    color: black;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+body {
+    background-color: darkcyan;
+}
+
+/* @media (max-width:576px) {
+    
+    body {
+        background-color: darkgreen;
+    }
+    
+} */
+
+/* @media (min-width:780px) and (max-width:1024px) {
+    body {
+        background-color: darkmagenta;
+    }
+} */
+
+/* @media (orientation: landscape) {
+    body {
+        background-color: darkred;
+    }
+    
+} */
+/* 
+@media (orientation: portrait) {
+    body {
+        background-color: darksalmon;
+    }
+    
+} */
+
+
+/* @media (min-width:375px) {
+    body {
+        background-color: darkkhaki;
+    }
+} */
+
+/* @media print {
+    body {
+        background-color: darkgoldenrod;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+} */
