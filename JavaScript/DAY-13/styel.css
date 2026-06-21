@@ -1,0 +1,15 @@
+.rounded {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 50%;
+}
+
+#changeColor {
+    font-size: 1.2rem;
+    padding: 20px 40px;
+    border-radius: 10px;
+    /* color: white; */
+}

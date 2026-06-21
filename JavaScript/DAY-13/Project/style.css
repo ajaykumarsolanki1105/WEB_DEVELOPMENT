@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+input {
+    padding: 20px 40px;
+    border: 2px solid yellow;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.container {
+    max-width: max-content;
+    height: auto;
+    padding: 40px;
+    margin: 1rem auto;
+    border: 2px solid white;
+}
+
+#addTask {
+    padding: 20px 40px;
+    background-color: transparent;
+    font-size: 1.2rem;
+    border: 2px solid darkred;
+    color: white; 
+    margin-left: 30px;
+}
+
+#taskList {
+    margin-top: 5rem;
+   
+    list-style: none;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+#taskList li {
+    background-color: aliceblue;
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
